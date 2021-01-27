@@ -1,0 +1,24 @@
+<mat-card>
+  <mat-spinner *ngIf="isLoading" [diameter] = "1"></mat-spinner>
+  <h1>Country Details</h1>
+  <mat-divider></mat-divider>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form  [formGroup]="FormGroup" (submit) = "onAddPost()" *ngIf="!isLoading">
+  <mat-form-field>
+    <input matInput [formControlName]="'name'" type="text" name="name" placeholder="Country Name">
+    <mat-error *ngIf="FormGroup.controls['name'].invalid">Please Enter Country</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput formControlName="capital" name="capital" placeholder="Capital">
+    <mat-error *ngIf="FormGroup.controls['capital'].invalid">Please Enter the capital</mat-error>
+  </mat-form-field>
+  <div class="imagePreview" *ngIf="imagePreview !== '' && imagePreview && FormGroup.controls['image'].valid">
+    <img [src]="imagePreview" [alt] = "FormGroup.value.name">
+  </div>
+  <mat-form-field>
+    <input matInput formControlName="image" name="image" (change)="onImagePick()" placeholder="Flag Image URL">
+    <mat-error *ngIf="FormGroup.controls['image'].invalid">Please Enter flag image Url</mat-error>
+  </mat-form-field>
+<button mat-raised-button type="submit" color = "primary">{{buttonName}}</button>
+</form>
+</mat-card>

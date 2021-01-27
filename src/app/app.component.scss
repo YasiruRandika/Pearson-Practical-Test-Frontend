@@ -1,0 +1,18 @@
+main {
+  width: 80%;
+  display: block;
+  margin: auto;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.mainPage {
+  min-height: 92%;
+  background-image: linear-gradient(to right bottom, #0066ff, #0083ff, #009cff, #1bb2ff, #66c6f9);
+}
+
+mat-spinner {
+  display: flex;
+  margin: auto;
+}
+

@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+footer {
+  height: 35px;
+  padding-top: 20px;
+  padding-left: 50px;
+  background-color: #006eff;
+  .codeBy {
+    color: white;
+    display: flex;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}

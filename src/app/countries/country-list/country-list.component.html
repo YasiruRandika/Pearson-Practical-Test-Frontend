@@ -1,0 +1,43 @@
+<mat-card class="intro">
+  <mat-grid-list cols="5" rowHeight="250px">
+    <mat-grid-tile colspan="3">
+      <div>
+      <h1>Countries in the World</h1>
+      <p>Since South Sudan became an independent state on July 9, 2011, there are now 195 independent sovereign nations in the world (not including the disputed but de facto independent Taiwan), plus some 60 dependent areas, and several disputed territories, like Kosovo. 193 sovereign states are members of the United Nations and are equally represented in the UN General Assembly. Two non-member countries have permanent observer states: the Holy See and the State of Palestine.</p>
+      <button mat-raised-button color="primary" [routerLink]="['/addCountry']">Add Country</button>
+    </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <div>
+          <h3>Countries Added</h3>
+          <div class="numBox">{{countries.length}}</div>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div>
+        <h3>Waiting to Add</h3>
+        <div class="numBox">{{195 - countries.length}}</div>
+      </div>
+  </mat-grid-tile>
+  </mat-grid-list>
+</mat-card>
+<mat-card class="countryList" *ngIf="countries.length > 0">
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <div *ngFor="let country of countries">
+      <mat-grid-list cols="5" rowHeight="70px">
+        <mat-grid-tile><img class="countryFlag" src="{{country.imageUrl}}"></mat-grid-tile>
+        <mat-grid-tile><b>{{country.name}}</b></mat-grid-tile>
+        <mat-grid-tile><b>{{country.capital}}</b></mat-grid-tile>
+        <mat-grid-tile>
+          <a target="blank" href="https://www.google.com/search?q={{country.name}}"><img class="google" src="https://www.johngregorysmith.com/wp-content/uploads/2017/08/google_logo1600.png"></a>
+          <a target="blank" href="https://en.wikipedia.org/wiki/{{country.name}}"><img class="google" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/1200px-Wikipedia-logo-v2.svg.png"></a>
+          <a target="blank" href="https://www.youtube.com/results?search_query={{country.name}}"><img class="youtube" src="https://logos-world.net/wp-content/uploads/2020/04/YouTube-Emblem.png"></a>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <button mat-raised-button class="editButton" [routerLink] = "['/updateCountry/', country.id]">Edit</button>
+          <button mat-raised-button color="warn" (click) = "onDelete(country.id)">Delete</button>
+        </mat-grid-tile>
+      </mat-grid-list>
+    <mat-divider *ngIf="countries.indexOf(country) < countries.length - 1"></mat-divider>
+    </div>
+</mat-card>

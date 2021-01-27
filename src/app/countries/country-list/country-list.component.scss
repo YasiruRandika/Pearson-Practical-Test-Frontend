@@ -1,0 +1,63 @@
+.countryList {
+  margin-top: 1rem;
+}
+
+mat-list-item {
+  display: block;
+}
+
+.countryFlag {
+  height: 40px;
+  width: auto;
+}
+
+.editButton {
+  background-color: #ffae00;
+  margin-right: 20px;
+}
+
+.google {
+  height: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.youtube {
+  height: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.intro {
+  margin-top: 1rem;
+  font-size:medium;
+}
+
+.numBox {
+  display: flex;
+  height: 100px;
+  width: 100px;
+  border-radius: 5px;
+  font-size: xx-large;
+  align-items: center;
+  justify-content: center;
+  color: #008cff;
+  border: solid #008cff;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.numBox:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+h3 {
+  color: #008cff;
+  font-size: smaller;
+  text-align: center;
+  font-weight: bold;
+}
+
+button {
+  color: white;
+}
